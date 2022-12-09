@@ -5,4 +5,6 @@ const router = require("express").Router();
 
 router.get("/users", decorateHtmlResponse("users"), getUser);
 
+router.get("/users", decorateHtmlResponse("users"), getUser);
+
 module.exports = router;

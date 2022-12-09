@@ -3,7 +3,6 @@ const connectDB = require("./config/config");
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
-const multer = require("multer");
 const path = require("path");
 require("colors");
 dotenv.config();
@@ -13,6 +12,7 @@ const router = require("./router/index");
 app.set("views engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
 //DB connection
